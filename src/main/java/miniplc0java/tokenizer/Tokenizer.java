@@ -48,9 +48,7 @@ public class Tokenizer {
         // 解析成功则返回无符号整数类型的token，否则返回编译错误
         //
         // Token 的 Value 应填写数字的值
-//    	while (!it.isEOF() && Character.isWhitespace(it.peekChar())) {
-//            it.nextChar();
-//        }
+
     	String tem="";
     	Pos beginp=it.currentPos();
     	while(!it.isEOF()&&Character.isDigit(it.peekChar())) {
@@ -83,19 +81,19 @@ public class Tokenizer {
     		tem=tem+it.nextChar();
     	}
     	try {
-    		if(tem.contentEquals("BEGIN")) {
-    			return new Token(TokenType.Begin, "", beginp,it.currentPos());
+    		if(tem.contentEquals("BEGIN")||tem.contentEquals("begin")) {
+    			return new Token(TokenType.Begin, "begin", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("END")) {
-    			return new Token(TokenType.End, "", beginp,it.currentPos());
+    		else if(tem.contentEquals("END")||tem.contentEquals("end")) {
+    			return new Token(TokenType.End, "end", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("VAR")) {
+    		else if(tem.contentEquals("VAR")||tem.contentEquals("var")) {
     			return new Token(TokenType.Var, "", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("CONST")) {
+    		else if(tem.contentEquals("CONST")||tem.contentEquals("const")) {
     			return new Token(TokenType.Const, "", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("PRINT")) {
+    		else if(tem.contentEquals("PRINT")||tem.contentEquals("print")) {
     			return new Token(TokenType.Print, "", beginp,it.currentPos());
     		}
     		else {
