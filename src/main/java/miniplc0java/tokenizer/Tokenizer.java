@@ -81,19 +81,19 @@ public class Tokenizer {
     		tem=tem+it.nextChar();
     	}
     	try {
-    		if(tem.contentEquals("BEGIN")) {
+    		if(tem.contentEquals("Begin")) {
     			return new Token(TokenType.Begin, "begin", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("END")) {
+    		else if(tem.contentEquals("End")) {
     			return new Token(TokenType.End, "end", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("VAR")) {
+    		else if(tem.contentEquals("Var")) {
     			return new Token(TokenType.Var, "", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("CONST")) {
+    		else if(tem.contentEquals("Const")) {
     			return new Token(TokenType.Const, "", beginp,it.currentPos());
     		}
-    		else if(tem.contentEquals("PRINT")) {
+    		else if(tem.contentEquals("Print")) {
     			return new Token(TokenType.Print, "", beginp,it.currentPos());
     		}
     		else {
