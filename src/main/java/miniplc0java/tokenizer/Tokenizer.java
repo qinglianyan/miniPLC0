@@ -163,7 +163,7 @@ public class Tokenizer {
             	}
             case '(':
             	try {
-            		return new Token(TokenType.Begin.LParen, '(',it.previousPos(), it.currentPos());
+            		return new Token(TokenType.LParen, '(',it.previousPos(), it.currentPos());
             	}
             	//改
             	catch(Error e) {
