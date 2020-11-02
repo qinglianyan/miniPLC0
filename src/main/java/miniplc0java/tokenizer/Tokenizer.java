@@ -77,7 +77,7 @@ public class Tokenizer {
         // Token 的 Value 应填写标识符或关键字的字符串
     	String tem="";
     	Pos beginp=it.currentPos();
-    	while(!it.isEOF()&&(Character.isDigit(it.peekChar())||Character.isAlphabetic(it.peekChar()))) {
+    	while(!it.isEOF()&&Character.isLetterOrDigit(it.peekChar())) {
     		tem=tem+it.nextChar();
     	}
     	try {
