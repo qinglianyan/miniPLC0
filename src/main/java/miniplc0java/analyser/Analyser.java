@@ -358,7 +358,7 @@ public final class Analyser {
     	expect(TokenType.Semicolon);
 
         // 标识符是什么？
-        String name = null;
+        String name = (String)nameToken.getValue();
         var symbol = symbolTable.get(name);
         if (symbol == null) {
             // 没有这个标识符
