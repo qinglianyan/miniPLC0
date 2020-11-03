@@ -437,7 +437,7 @@ public final class Analyser {
             // 加载标识符的值
         	Token nameToken=expect(TokenType.Ident);
         	
-            String name =(String)a.getValue();
+            String name =(String)nameToken.getValue();
             var symbol = symbolTable.get(name);
             if (symbol == null) {
                 // 没有这个标识符
