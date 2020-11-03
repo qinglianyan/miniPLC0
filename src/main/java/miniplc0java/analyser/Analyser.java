@@ -256,15 +256,18 @@ public final class Analyser {
             // 下个 token 是等于号吗？如果是的话分析初始化
             if(nextIf(TokenType.Equal)!=null) {//是等号
             	// 分析初始化的表达式 改
+            	//应该标记已经初始化了
             	analyseExpression();
+            	initialized=true;
             }
             
             // 分号
             expect(TokenType.Semicolon);
 
             // 加入符号表，请填写名字和当前位置（报错用）
+            // 加入符号表的时候
             String name = (String)nameToken.getValue();
-            addSymbol(name, false, false, nameToken.getStartPos());
+            addSymbol(name, initialized, false, nameToken.getStartPos());
 
             // 如果没有初始化的话在栈里推入一个初始值
             if (!initialized) {
