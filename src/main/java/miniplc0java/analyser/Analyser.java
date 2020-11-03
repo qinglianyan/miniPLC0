@@ -206,7 +206,7 @@ public final class Analyser {
     	analyseConstantDeclaration();
     	analyseVariableDeclaration();
     	analyseStatementSequence();
-        //throw new Error("Not implemented");
+        throw new Error("Not implemented");
     }
 
     private void analyseConstantDeclaration() throws CompileError {
@@ -464,6 +464,6 @@ public final class Analyser {
         if (negate) {
             instructions.add(new Instruction(Operation.SUB));
         }
-        //throw new Error("Not implemented");
+        throw new Error("Not implemented");
     }
 }
